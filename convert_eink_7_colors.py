@@ -5,10 +5,11 @@
 """Convert (bitmap) image into 7 color BMP, suitable for e-ink color display
 """
 
-import sys
-import os.path
-from PIL import Image, ImagePalette, ImageOps
 import argparse
+import os.path
+import sys
+
+from PIL import Image, ImagePalette, ImageOps
 
 
 def convert_one(input_filename, display_direction=None, display_mode='scale', display_dither=Image.FLOYDSTEINBERG):
