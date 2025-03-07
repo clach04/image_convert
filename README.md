@@ -8,3 +8,6 @@ Collection of preset image converters
   * https://github.com/peterhinch/micropython-nano-gui/blob/master/img_cvt.py
   * https://github.com/aerialist/repaper_companion
   
+  * https://github.com/ImageMagick/ImageMagick
+  * https://www.irfanview.com/
+  * https://www.gimp.org/
