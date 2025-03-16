@@ -1,0 +1,20 @@
+GIMP Palette
+Name: nano-gui_4-bits
+Columns: 16
+#
+  0   0   0	BLACK
+  0 255   0	GREEN
+255   0   0	RED
+140   0   0	LIGHTRED  (actually dark-red)
+  0   0 255	BLUE
+255 255   0	YELLOW
+100 100 100	GREY
+255   0 255	MAGENTA
+  0 255 255	CYAN
+  0 100   0	LIGHTGREEN
+  0  80   0	DARKGREEN
+  0   0  90	DARKBLUE
+ 75  75  75	12 light-Grey  # NOTE not a reserved nano-color
+150 150 150	13 darker-Grey  # NOTE not a reserved nano-color
+200 200 200	14 darkest-Grey  # NOTE not a reserved nano-color
+255 255 255	WHITE
