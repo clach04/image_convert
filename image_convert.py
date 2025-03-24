@@ -6,6 +6,7 @@
 """
 
 import argparse
+import glob
 import os.path
 import sys
 
@@ -286,14 +287,23 @@ def main(argv=None):
     display_mode = args.mode
     display_dither = Image.Dither(args.dither)
 
-    # Check whether the input file exists
-    if not os.path.isfile(input_filename):
-        print(f'Error: file {input_filename} does not exist')
-        sys.exit(1)
 
-    output_filename = convert_one(input_filename, display_direction, display_mode, display_dither, pil_256_color_palette=pil_256_color_palette, resolution=resolution)
+    if '*' in input_filename:
+        # wildcard, probably Windows...
+        filenames = glob.glob(input_filename)
+    else:
+        filenames = [input_filename]  # for now, assume a single parameter
 
-    print(f'Successfully converted {input_filename} to {output_filename}')
+    for filename in filenames:
+        print('Processing %s' % (filename,))
+        # TODO revisit below
+        # Check whether the input file exists
+        if not os.path.isfile(filename):
+            print(f'Error: file {filename} does not exist')
+            sys.exit(1)
+        # TODO revisit above
+        output_filename = convert_one(filename, display_direction, display_mode, display_dither, pil_256_color_palette=pil_256_color_palette, resolution=resolution)
+        print(f'\tSuccessfully converted {filename} to {output_filename}')
 
     return 0
 
